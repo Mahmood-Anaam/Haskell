@@ -1,0 +1,12 @@
+resolver:
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/20/8.yaml
+
+packages:
+- .
+
+extra-deps:
+- test-invariant-0.4.5.0
+
+system-ghc: true
+
+compiler-check: newer-minor

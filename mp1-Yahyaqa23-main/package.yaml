@@ -1,0 +1,51 @@
+name:       cs340mp1
+
+# By signing below, I pledge on my honor that I neither gave nor received any
+# unauthorized assistance on the code contained in this repository. I understand
+# that cheating/plagiarism will result in, at minimum, a score of zero on the
+# assignment, and possible removal from the class with a failing grade.
+
+author:     "Charlie S. Student"      # your name
+maintainer: "csstudent@hawk.iit.edu"  # your IIT email
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+- gloss
+- hspec
+- HUnit
+- HUnit-approx
+- QuickCheck
+
+executables:
+  mp1:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cs340mp1
+    when:
+    - condition: false
+      other-modules: Paths_cs340mp1
+
+library:
+  source-dirs: src
+  when:
+  - condition: false
+    other-modules: Paths_cs340mp1
+
+tests:
+  mp1-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cs340mp1

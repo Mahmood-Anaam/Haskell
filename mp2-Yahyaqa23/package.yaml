@@ -1,0 +1,47 @@
+name:       cs340mp2
+
+# By signing below, I pledge on my honor that I neither gave nor received any
+# unauthorized assistance on the code contained in this repository.
+
+author:     "Yahya alqahtani"      # your name
+maintainer: "yalqahtani3@hawk.iit.edu"  # your IIT email
+
+dependencies:
+- base >= 4.7 && < 5
+- array
+- gloss
+- hspec
+- HUnit
+- HUnit-approx
+- QuickCheck
+
+executables:
+  mp2:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cs340mp2
+    when:
+    - condition: false
+      other-modules: Paths_cs340mp1
+
+library:
+  source-dirs: src
+  when:
+  - condition: false
+    other-modules: Paths_cs340mp1
+
+tests:
+  mp2-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cs340mp2
